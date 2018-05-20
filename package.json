@@ -27,9 +27,7 @@
     "escape-string-regexp": "1.0.5",
     "color-thief-jimp": "2.0.2",
     "react-html-parser": "2.0.2",
-    "react-transition-group": "2.3.1",
-    "react-native-motion": "0.2.0",
-    "EventEmitter": "1.0.0"
+    "react-transition-group": "2.3.1"
   },
   "keywords": [
     "gatsby"

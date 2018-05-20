@@ -16,6 +16,10 @@ const Nav = () => (
         <Link to='/work' activeClassName='current'> Work
         </Link>
       </li>
+      <li>
+        <Link to='/test' activeClassName='current'> Test
+        </Link>
+      </li>
     </ul>
   </nav>
 )

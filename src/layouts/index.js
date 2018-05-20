@@ -43,16 +43,16 @@ class TemplateWrapper extends React.Component {
           </title>
           {meta.meta.map((meta, index) => <meta key={index} {...meta} />)}
         </Helmet>
-        <Header title={meta.title} />
+        {/* <Header title={meta.title} /> */}
         {/* <TransitionGroup>
-                          <CSSTransition key={location.pathname} classNames='transition' timeout={{ enter: 1000, exit: 1000 }}>
-                            <TransitionHandler location={location}> */}
+                                          <CSSTransition key={location.pathname} classNames='transition' timeout={{ enter: 1000, exit: 1000 }}>
+                                            <TransitionHandler location={location}> */}
         <div>
           {children()}
         </div>
         {/* </TransitionHandler>
-                                  </CSSTransition>
-                                </TransitionGroup> */}
+                                                  </CSSTransition>
+                                                </TransitionGroup> */}
       </div>
     )
   }

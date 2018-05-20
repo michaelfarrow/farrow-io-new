@@ -1,6 +1,23 @@
 
 $bp-max: 600px;
 
+$colour-key: #242d5f;
+$colour-secondary-1: #33b4a4;
+$colour-secondary-2: #fbc156;
+$colour-secondary-3: #d04759;
+$colour-secondary-4: #cfe76b;
+
+@mixin font-mono() {
+  font-family: 'Overpass Mono', Courier, monospace;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+@mixin font-sans-serif() {
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 700;
+}
+
 html, body {
   height: 100%;
 }
@@ -8,14 +25,56 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-weight: 400;
-  font-family: 'PT Sans', Arial, sans-serif;
-  background-color: rebeccapurple;
-  color: white;
+  font-size: 14px;
+  color: $colour-key;
+  @include font-mono;
+}
+
+.container-colour {
+  background-color: white;
+
+  &.container-colour-key {
+    background-color: $colour-key;
+    color: white;
+  }
+
+  &.container-colour-secondary-1 {
+    background-color: $colour-secondary-1;
+    color: white;
+  }
+
+  &.container-colour-secondary-2 {
+    background-color: $colour-secondary-2;
+    color: white;
+  }
+
+  &.container-colour-secondary-3 {
+    background-color: $colour-secondary-3;
+    color: white;
+  }
+
+  &.container-colour-secondary-4 {
+    background-color: $colour-secondary-4;
+  }
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3em;
 }
 
 a {
-  color: white;
+  color: black;
 
   &:hover {
     text-decoration: none;
@@ -93,6 +152,8 @@ pre {
 header#header-main {
   text-align: center;
   padding: 2em 0.5em;
+  position: relative;
+  z-index: 2;
 
   h1 {
     margin-top: 0;
@@ -104,17 +165,46 @@ header#header-main {
 }
 
 nav#nav-main {
+  @include font-sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.25em;
+
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+
     li {
       display: inline-block;
+
       a {
         display: inline-block;
-        padding: 0 0.5em;
+        position: relative;
+        padding: 0 1.5em;
+        opacity: 0.7;
+        transition: opacity 150ms;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 0em;
+          height: 1px;
+          background-color: white;
+          position: absolute;
+          left: 50%;
+          bottom: -0.5em;
+          transform: translateX(-50%);
+          transition: width 150ms;
+        }
+
         &.current {
-          text-decoration: underline;
+          opacity: 1;
+
+          &:before {
+            width: 2em;
+          }
         }
       }
     }
@@ -124,11 +214,69 @@ nav#nav-main {
 
 
 
+.container {
+  max-width: 80em;
+  padding: 0 2em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
 
+  p {
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.transition-container {
-  position: absolute;
-  width: 100%;
+  blockquote {
+    text-align: center;
+    margin: 5em auto;
+
+    cite {
+      display: block;
+      font-style: normal;
+      text-transform: uppercase;
+      margin-top: 1em;
+      @include font-sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+
+      &:before {
+        content: '— ';
+      }
+    }
+
+    q {
+      font-size: 2em;
+      line-height: 1.5;
+
+      &:before {
+        content: '“';
+      }
+      &:after {
+        content: '”';
+      }
+    }
+  }
+
+  &.container-full {
+    * {
+      max-width: none;
+    }
+  }
+}
+
+// .transition-container {
+//   position: absolute;
+//   z-index: 1;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   padding-top: 10em;
+//   box-sizing: border-box;
+// }
+
+#___gatsby {
+  min-height: 100%;
 }
 
 //
@@ -164,3 +312,36 @@ nav#nav-main {
 // .transition-cover-back {
 //   background-color: white;
 // }
+
+
+.work-header-half {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.row {
+  display: flex;
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+.column {
+  flex: 1;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#logo {
+  width: 50%;
+  max-width: 40em;
+  position: relative;
+  transform: translateX(-31.1%);
+
+  svg {
+    polygon,
+    path,
+    rect {
+      fill: $colour-secondary-3;
+    }
+  }
+}

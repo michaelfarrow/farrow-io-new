@@ -1,30 +1,43 @@
 ---
-title: "Ballantines"
+title: Ballantines
+structure:
+  -
+    - type: markdown
+      key: introduction
+  -
+    - type: markdown
+      key: another
+    - type: bool
+      key: another 2
 ---
-# An exhibit of Markdown
 
----
----
+# another
+
+This is another block
+
+[Home](/)
+
+[Home](http://localhost)
+
+[Google](http://google.com)
+
+[Blog](http://localhost/blog)
+
+[Blog](/blog)
+
+![alt text](header2.png)
+
+# introduction
+## Introduction
+
+testing testing 123
+
+- testing
+- testing
+- 1, 2, 3
+
+# another 2
+
+This is yet another block
 
 ![alt text](header.jpg "Logo Title Text 1")
-![alt text](header2.png "Logo Title Text 1")
-
----
----
-
-![alt text](header.jpg "Logo Title Text 1")
-
----
-
-This note demonstrates some of what [Markdown][1] is capable of doing.
-
-*Note: Feel free to play with this page. Unlike regular notes, this doesn&#39;t automatically save itself.*
-
----
----
-
-## Basic formatting
-
-Paragraphs can be written like so. A paragraph is the basic block of Markdown. A paragraph is what text will turn into when there is no reason it should become anything else.
-
-Paragraphs must be separated by a blank line. Basic formatting of *italics* and **bold** is supported. This *can be **nested** like* so.
