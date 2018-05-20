@@ -45,6 +45,8 @@ export default class YouTubeEmbed extends React.Component {
   }
 
   componentWillMount () {
+    const isBrowser = typeof document !== `undefined`
+    if (!isBrowser) return
     if (!apiInitiated) {
       apiInitiated = true
       var tag = document.createElement('script')

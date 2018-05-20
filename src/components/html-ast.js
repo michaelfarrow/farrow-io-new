@@ -73,9 +73,10 @@ export default class HtmlAst extends React.Component {
 
   render () {
     const { ast, images, ...props } = this.props
+    const isBrowser = typeof window !== `undefined`
     return (
       <div {...props}>
-        {ast.map(this.process)}
+        {isBrowser && ast.map(this.process) || undefined}
       </div>
     )
   }

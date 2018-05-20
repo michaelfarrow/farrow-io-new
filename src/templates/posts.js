@@ -53,7 +53,7 @@ export default class PostsPage extends React.Component {
         <h4>{pageCount} Pages</h4>
         {group.map(({ node }, index) => {
            const nodeStyle = selectTransitionStyle(this, componentTransitions.post)
-           if (transition.status === 'entered') {
+           if (transition && transition.status === 'entered') {
              nodeStyle.transitionDelay = `${transition.duration.delay + index * 200}ms`
            }
            return (

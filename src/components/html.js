@@ -44,9 +44,10 @@ export default class Html extends React.Component {
 
   render () {
     const { html, images, props } = this.props
+    const isBrowser = typeof window !== `undefined`
     return (
       <div {...props}>
-        {ReactHtmlParser(html, {transform: this.transform})}
+        {isBrowser && ReactHtmlParser(html, {transform: this.transform}) || undefined}
       </div>
     )
   }
