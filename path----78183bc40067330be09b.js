@@ -1,0 +1,2 @@
+webpackJsonp([60335399758886],{156:function(e,t){e.exports={data:{site:{siteMetadata:{title:"Gatsby",meta:[{name:"description",content:"Sample"},{name:"keywords",content:"sample, something"},{name:"theme-color",content:"rebeccapurple"}],version:"1.9.256"}}},layoutContext:{}}}});
+//# sourceMappingURL=path----78183bc40067330be09b.js.map
