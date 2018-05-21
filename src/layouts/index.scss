@@ -1,5 +1,6 @@
 
 $bp-max: 600px;
+$bp-mobile: 600px;
 
 $colour-key: #242d5f;
 $colour-secondary-1: #33b4a4;
@@ -332,16 +333,157 @@ nav#nav-main {
 }
 
 #logo {
-  width: 50%;
+  // width: 80%;
+  width: 100%;
   max-width: 40em;
   position: relative;
-  transform: translateX(-31.1%);
 
   svg {
+    transform: translateY(53.4%);
+
+    @media(min-width: $bp-mobile) {
+      transform: translateX(-18.9%);
+    }
+
     polygon,
     path,
     rect {
       fill: $colour-secondary-3;
     }
   }
+}
+
+
+#page-home {
+
+  .container-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-top {
+    flex: 1;
+    display: flex;
+    position: relative;
+    min-height: 50vh;
+    align-items: flex-end;
+    padding: 0 2em;
+    box-sizing: border-box;
+    background-color: $colour-key;
+    background-image: url(http://hello.eboy.com/eboy/wp-content/uploads/2015/09/SFCUTCOVER-01t-2x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($colour-key, 0.5);
+      background: linear-gradient(to bottom, rgba($colour-key, 0), rgba($colour-key, 0.7));
+    }
+
+    @media(min-width: $bp-mobile) {
+      justify-content: flex-end;
+      padding: 1em 0;
+      background: none;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .container-bottom {
+    flex: 1;
+    display: flex;
+    min-height: 50vh;
+    background-color: $colour-key;
+    padding-top: 20%;
+    padding-left: 2em;
+    padding-right: 2em;
+    box-sizing: border-box;
+
+    @media(min-width: $bp-mobile) {
+      background-color: transparent;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 1em 0;
+    }
+  }
+
+  .container-right {
+    @media(min-width: $bp-mobile) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 50%;
+      background-color: $colour-key;
+    }
+  }
+
+  .container-left {
+    @media(min-width: $bp-mobile) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 50%;
+      background-color: $colour-key;
+      background-image: url(http://hello.eboy.com/eboy/wp-content/uploads/2015/09/SFCUTCOVER-01t-2x.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($colour-key, 0.5);
+        background: linear-gradient(to right, rgba($colour-key, 0), rgba($colour-key, 0.7));
+      }
+    }
+  }
+
+  .home-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media(min-width: $bp-mobile) {
+      width: 50%;
+      justify-content: flex-start;
+    }
+  }
+
+  .home-intro {
+    color: white;
+
+    @media(min-width: $bp-mobile) {
+      position: relative;
+      width: 50%;
+    }
+  }
+
+  .home-intro-inner {
+    @media(min-width: $bp-mobile) {
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+
 }

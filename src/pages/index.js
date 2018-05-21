@@ -39,31 +39,6 @@ const EMBED_PLAYER_VARS = {
 }
 
 const styles = {
-  container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    minHeight: '100%',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  top: {
-    flex: 1,
-    display: 'flex',
-    minHeight: '50vh',
-    backgroundColor: 'red',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end'
-
-  },
-  bottom: {
-    flex: 1,
-    display: 'flex',
-    minHeight: '50vh',
-    backgroundColor: 'blue',
-    justifyContent: 'flex-end'
-  },
   video: {
     position: 'absolute',
     top: 0,
@@ -71,9 +46,6 @@ const styles = {
     bottom: 0,
     left: 0,
     overflow: 'hidden'
-  },
-  intro: {
-    width: '50%'
   },
   logo: {
 
@@ -125,17 +97,27 @@ export default class IndexPage extends React.Component {
   render () {
     const { current } = this.state
     return (
-      <div style={styles.container}>
-        <div style={styles.top}>
-          <Logo id='logo' style={styles.logo} />
-        </div>
-        <div style={styles.bottom}>
-          <p style={styles.intro}>
-            <span>Hi, my name's Mike, and I'm a</span>
-            <Type>
-              {this.titles[current]}
-            </Type>
-          </p>
+      <div id='page-home'>
+        <div className='container-main'>
+          <div className='container-left' />
+          <div className='container-right' />
+          <div className='container-top'>
+            <div className='home-logo'>
+              <Logo id='logo' style={styles.logo} />
+            </div>
+          </div>
+          <div className='container-bottom'>
+            <div className='home-intro'>
+              <div className='home-intro-inner'>
+                <p>
+                  <span>Hi, my name's Mike, and I'm a</span>
+                  <Type>
+                    {this.titles[current]}
+                  </Type>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
