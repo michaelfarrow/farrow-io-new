@@ -20,8 +20,8 @@ const TITLES = [
   ' electronics tinkerer',
   ' DIY enthusiast',
   ' maker',
-  ' antique sewing machine restorer',
-  ' amateur scientist',
+  'n antique sewing machine restorer',
+  'n amateur scientist',
   ' wannabe engineer',
   ' Reactionist'
 ]
